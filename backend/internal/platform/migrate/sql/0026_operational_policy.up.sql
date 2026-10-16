@@ -1,0 +1,3 @@
+BEGIN;
+ALTER TABLE businesses ADD COLUMN policy_version INT NOT NULL DEFAULT 1;
+COMMIT;

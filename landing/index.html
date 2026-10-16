@@ -1,0 +1,1117 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      StorePOS · Kasir, stok, dan operasional usaha dalam satu tempat
+    </title>
+    <meta
+      name="description"
+      content="Kelola penjualan, persediaan, dan kas shift dengan StorePOS. Alur khusus toko, kafe/restoran, dan apotek. Jadwalkan demo sesuai kebutuhan usaha Anda."
+    />
+    <meta name="theme-color" content="#2563eb" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+    <meta
+      property="og:title"
+      content="StorePOS · Catatan usaha yang lebih rapi"
+    />
+    <meta
+      property="og:description"
+      content="Penjualan, stok, dan kas shift di satu tempat. Lihat alur StorePOS untuk usaha Anda."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- site:metadata -->
+    <link rel="icon" href="/images/icon_web_POS.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/images/icon_web_POS.png" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#konten">Lewati ke konten</a>
+    <svg
+      class="icon-definitions"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <symbol id="i-cart" viewBox="0 0 24 24">
+          <path
+            d="M3 4h2l2 12h10l3-8H6 M9 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2 M17 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2"
+          />
+        </symbol>
+        <symbol id="i-box" viewBox="0 0 24 24">
+          <path
+            d="M3 7l9-4 9 4v10l-9 4-9-4z M3 7l9 4 9-4 M12 11v10 M7 5l10 4"
+          />
+        </symbol>
+        <symbol id="i-wallet" viewBox="0 0 24 24">
+          <path d="M3 6V4h16v4 M3 6h17v14H3z M16 11h5v5h-5z" />
+        </symbol>
+        <symbol id="i-chart" viewBox="0 0 24 24">
+          <path d="M4 3v18h17 M8 16v-5 M13 16V7 M18 16v-9" />
+        </symbol>
+        <symbol id="i-users" viewBox="0 0 24 24">
+          <path
+            d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8 M22 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75"
+          />
+        </symbol>
+        <symbol id="i-receipt" viewBox="0 0 24 24">
+          <path d="M5 3h14v19l-3-2-4 2-4-2-3 2z M8 7h8 M8 11h8 M8 15h5" />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <path d="M5 12l4 4L19 6" />
+        </symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+          <path d="M5 12h14 M13 6l6 6-6 6" />
+        </symbol>
+      </defs>
+    </svg>
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a class="brand" href="#" aria-label="StorePOS, kembali ke awal"
+          ><img
+            src="/images/icon_web_POS.png"
+            alt=""
+            width="426"
+            height="378"
+          /><span>Store<span class="brand-accent">POS</span></span></a
+        >
+        <nav class="desktop-nav" aria-label="Navigasi utama">
+          <a href="#fitur">Fitur</a><a href="#jenis-usaha">Jenis usaha</a
+          ><a href="#alur">Alur kerja</a><a href="#faq">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="login-link" href="__APP_URL__">Masuk</a
+          ><a class="button small" href="#demo" data-cta="nav_demo"
+            >Minta Demo</a
+          ><button
+            class="menu-button"
+            type="button"
+            aria-controls="mobile-menu"
+            aria-haspopup="dialog"
+          >
+            <span class="menu-lines" aria-hidden="true"></span><span>Menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <dialog id="mobile-menu" class="mobile-menu" aria-labelledby="menu-title">
+      <div class="menu-heading">
+        <strong id="menu-title">Menu StorePOS</strong
+        ><button type="button" class="menu-close" aria-label="Tutup menu">
+          ×
+        </button>
+      </div>
+      <nav aria-label="Navigasi mobile">
+        <a href="#fitur">Fitur</a><a href="#jenis-usaha">Jenis usaha</a
+        ><a href="#alur">Alur kerja</a><a href="#faq">FAQ</a
+        ><a href="__APP_URL__">Masuk ke aplikasi</a
+        ><a href="#demo" class="button" data-cta="mobile_demo">Minta Demo</a>
+      </nav>
+    </dialog>
+    <main id="konten">
+      <section class="hero" id="beranda">
+        <div class="container hero-content">
+          <h1>Usaha berjalan.<br />Catatan <span>tetap rapi.</span></h1>
+          <p class="hero-description">
+            Penjualan, persediaan, dan kas shift dalam satu tempat.<br
+              class="wide-only"
+            />
+            Dengan alur yang mengikuti cara usaha Anda bekerja.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#demo" data-cta="hero_demo"
+              >Minta Demo
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-arrow" /></svg></a
+            ><a
+              class="button secondary"
+              href="#demo-operasional"
+              data-cta="hero_walkthrough"
+              >Lihat cara kerjanya</a
+            >
+          </div>
+          <p class="hero-note">
+            Berjalan di browser komputer dan tablet. Membutuhkan internet.
+          </p>
+          <div class="hero-art" aria-label="Ilustrasi mesin kasir StorePOS">
+            <img
+              src="/images/logo_utama_POS.png"
+              alt="Mesin kasir StorePOS dengan layar produk, kartu, dan struk penjualan"
+              width="483"
+              height="465"
+              fetchpriority="high"
+            /><span class="art-note art-note-one"
+              ><svg class="icon" aria-hidden="true">
+                <use href="#i-check" />
+              </svg>
+              Penjualan tercatat</span
+            ><span class="art-note art-note-two"
+              ><svg class="icon" aria-hidden="true"><use href="#i-box" /></svg>
+              Stok terpantau</span
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section tinted" id="fitur">
+        <div class="container">
+          <div class="section-heading centered" data-reveal>
+            <p class="eyebrow">Dari meja kasir sampai laporan</p>
+            <h2>Yang Anda butuhkan,<br />ada dalam satu alur.</h2>
+            <p>
+              Catat kegiatan harian tanpa memisahkan penjualan, stok, dan kas.
+            </p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card" data-reveal>
+              <svg class="icon feature-icon" aria-hidden="true">
+                <use href="#i-cart" />
+              </svg>
+              <h3>Penjualan di kasir</h3>
+              <p>
+                Cari atau scan produk, susun keranjang, lalu catat
+                pembayarannya.
+              </p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <svg class="icon feature-icon" aria-hidden="true">
+                <use href="#i-box" />
+              </svg>
+              <h3>Persediaan tercatat</h3>
+              <p>
+                Ikuti barang masuk, barang terjual, penyesuaian, dan hasil
+                opname.
+              </p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <svg class="icon feature-icon" aria-hidden="true">
+                <use href="#i-wallet" />
+              </svg>
+              <h3>Kas & tutup shift</h3>
+              <p>
+                Bandingkan kas seharusnya dengan uang yang benar-benar ada di
+                laci.
+              </p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <svg class="icon feature-icon" aria-hidden="true">
+                <use href="#i-chart" />
+              </svg>
+              <h3>Laporan usaha</h3>
+              <p>
+                Lihat penjualan neto, metode pembayaran, retur, dan estimasi
+                laba kotor.
+              </p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <svg class="icon feature-icon" aria-hidden="true">
+                <use href="#i-users" />
+              </svg>
+              <h3>Akses sesuai peran</h3>
+              <p>
+                Atur akses pemilik, manajer, kasir, gudang, apoteker, dan dapur.
+              </p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <svg class="icon feature-icon" aria-hidden="true">
+                <use href="#i-receipt" />
+              </svg>
+              <h3>Struk & riwayat</h3>
+              <p>
+                Cetak struk melalui browser dan periksa kembali rincian
+                transaksi.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section editorial">
+        <div class="container split">
+          <div class="editorial-copy" data-reveal="left">
+            <p class="eyebrow">Ringkasan usaha</p>
+            <h2>Buka hari dengan<br />gambaran yang jelas.</h2>
+            <p>
+              Penjualan neto, diskon, retur, dan metode pembayaran tampil dalam
+              satu ringkasan. Lihat produk yang terjual tanpa mengumpulkan
+              catatan dari tempat berbeda.
+            </p>
+            <a
+              class="text-link"
+              href="#demo-operasional"
+              data-cta="dashboard_demo"
+              >Lihat contoh operasional
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg
+            ></a>
+          </div>
+          <figure class="product-visual" data-reveal="right">
+            <div class="product-window">
+              <div class="window-bar">
+                <span aria-hidden="true">● ● ●</span
+                ><span>StorePOS / Dashboard</span
+                ><span class="demo-tag">Data demo</span>
+              </div>
+              <iframe
+                src="/previews/dashboard.html"
+                title="Dashboard StorePOS dari komponen aplikasi, dengan data demo Toko Sumber Rejeki"
+                loading="lazy"
+                tabindex="-1"
+                inert
+                sandbox
+              ></iframe>
+            </div>
+            <figcaption>
+              Tampilan komponen aplikasi StorePOS dengan data demo.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="section tinted editorial">
+        <div class="container split reversed">
+          <div class="editorial-copy" data-reveal="right">
+            <p class="eyebrow">Persediaan</p>
+            <h2>Barang masuk dan keluar.<br />Jejaknya tetap ada.</h2>
+            <p>
+              Catat penerimaan dari supplier, penyesuaian stok, dan opname.
+              Setiap pergerakan mempunyai rujukan agar tim Anda bisa menelusuri
+              perubahan saldo.
+            </p>
+            <ul class="check-list">
+              <li>Saldo dan batas stok minimum</li>
+              <li>Satuan dasar dan satuan tambahan</li>
+              <li>Kartu stok dan riwayat pergerakan</li>
+            </ul>
+            <a class="text-link" href="#demo" data-cta="inventory_demo"
+              >Diskusikan alur persediaan
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg
+            ></a>
+          </div>
+          <figure class="product-visual" data-reveal="left">
+            <div class="product-window">
+              <div class="window-bar">
+                <span aria-hidden="true">● ● ●</span
+                ><span>StorePOS / Persediaan</span
+                ><span class="demo-tag">Data demo</span>
+              </div>
+              <iframe
+                src="/previews/stock.html"
+                title="Persediaan StorePOS dari komponen aplikasi, dengan data demo"
+                loading="lazy"
+                tabindex="-1"
+                inert
+                sandbox
+              ></iframe>
+            </div>
+            <figcaption>
+              Nama produk dan saldo pada pratinjau adalah data demo.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="section editorial">
+        <div class="container split">
+          <div class="editorial-copy" data-reveal="left">
+            <p class="eyebrow">Penjualan & laporan</p>
+            <h2>Angka yang bisa<br />Anda telusuri kembali.</h2>
+            <p>
+              Lihat penjualan bruto, diskon, retur, dan penjualan neto per
+              periode. Ekspor laporan untuk pemeriksaan lanjutan. Estimasi laba
+              kotor mengikuti harga beli yang Anda catat.
+            </p>
+            <p class="small-note">
+              QRIS dan kartu dicatat manual setelah pembayaran diterima di
+              perangkat pembayaran Anda.
+            </p>
+            <a class="text-link" href="#demo" data-cta="reports_demo"
+              >Lihat laporan saat demo
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg
+            ></a>
+          </div>
+          <figure class="product-visual" data-reveal="right">
+            <div class="product-window">
+              <div class="window-bar">
+                <span aria-hidden="true">● ● ●</span
+                ><span>StorePOS / Laporan</span
+                ><span class="demo-tag">Data demo</span>
+              </div>
+              <iframe
+                src="/previews/reports.html"
+                title="Laporan penjualan StorePOS dari komponen aplikasi, dengan data demo"
+                loading="lazy"
+                tabindex="-1"
+                inert
+                sandbox
+              ></iframe>
+            </div>
+            <figcaption>
+              Pratinjau laporan dari komponen aplikasi, bukan angka usaha nyata.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="section tinted" id="jenis-usaha">
+        <div class="container">
+          <div class="section-heading centered" data-reveal>
+            <p class="eyebrow">Sesuai cara usaha Anda bekerja</p>
+            <h2>Tiga jenis usaha.<br />Alur yang berbeda.</h2>
+            <p>Pilih usaha Anda untuk melihat fokus operasionalnya.</p>
+          </div>
+          <div class="business-tabs" aria-label="Jenis usaha">
+            <a href="#usaha-toko" data-tab="retail">Toko & minimarket</a
+            ><a href="#usaha-kafe" data-tab="restaurant">Kafe & restoran</a
+            ><a href="#usaha-apotek" data-tab="pharmacy">Apotek</a>
+          </div>
+          <article class="business-panel" id="usaha-toko" data-panel="retail">
+            <div>
+              <span class="panel-label">Retail</span>
+              <h3>Dari barcode ke struk,<br />lanjut ke kartu stok.</h3>
+              <p>
+                Katalog produk, variasi, barcode, dan satuan jual membantu kasir
+                memilih barang yang tepat. Penjualan yang selesai tercatat pada
+                persediaan dan laporan.
+              </p>
+              <ul class="check-list">
+                <li>Scan barcode dan cari produk</li>
+                <li>Penerimaan supplier dan opname</li>
+                <li>Cetak label barcode dan struk</li>
+              </ul>
+              <a
+                class="button"
+                href="#demo"
+                data-business="retail"
+                data-cta="retail_demo"
+                >Minta demo untuk toko</a
+              >
+            </div>
+            <div class="business-example">
+              <p class="demo-label">Data demo · Toko Sumber Rejeki</p>
+              <h4>Satu keranjang, catatan lengkap.</h4>
+              <ul class="sample-lines">
+                <li><span>Beras 5 kg</span><b>1 pcs</b></li>
+                <li><span>Minyak Goreng 2 L</span><b>1 pcs</b></li>
+                <li><span>Gula Pasir 1 kg</span><b>2 pcs</b></li>
+                <li><span>Telur</span><b>0,5 kg</b></li>
+              </ul>
+              <p>Pilih satuan, bayar, lalu cetak struk.</p>
+            </div>
+          </article>
+          <article
+            class="business-panel"
+            id="usaha-kafe"
+            data-panel="restaurant"
+          >
+            <div>
+              <span class="panel-label">Kafe & restoran</span>
+              <h3>Pesanan meja tercatat.<br />Dapur tahu yang dikerjakan.</h3>
+              <p>
+                Kelola dine-in, takeaway, dan delivery. Pilihan modifier dan
+                catatan pesanan diteruskan ke tiket dapur, dengan status yang
+                dapat diikuti tim.
+              </p>
+              <ul class="check-list">
+                <li>Area, meja, dan pesanan terbuka</li>
+                <li>Modifier dan tiket per stasiun dapur</li>
+                <li>Checkout pesanan dan cetak tagihan</li>
+              </ul>
+              <a
+                class="button"
+                href="#demo"
+                data-business="restaurant"
+                data-cta="restaurant_demo"
+                >Minta demo untuk kafe</a
+              >
+            </div>
+            <div class="business-example">
+              <p class="demo-label">Data demo · Kopi Teras</p>
+              <h4>Meja 4 · Pesanan dine-in</h4>
+              <ul class="sample-lines">
+                <li>
+                  <span>Es Kopi Susu<small>Less Sugar · Extra Shot</small></span
+                  ><b>Diproses</b>
+                </li>
+                <li><span>Croissant</span><b>Siap</b></li>
+                <li><span>Teh Tarik</span><b>Diproses</b></li>
+              </ul>
+              <p>Split bill dan pindah meja belum didukung.</p>
+            </div>
+          </article>
+          <article
+            class="business-panel"
+            id="usaha-apotek"
+            data-panel="pharmacy"
+          >
+            <div>
+              <span class="panel-label">Apotek · Program pilot</span>
+              <h3>Periksa batch,<br />sebelum barang keluar.</h3>
+              <p>
+                Pencatatan batch, tanggal kedaluwarsa, karantina, dan referensi
+                resep membantu alur persediaan apotek. Evaluasi kebutuhan apotek
+                Anda bersama tim saat demo.
+              </p>
+              <ul class="check-list">
+                <li>Satuan dus, strip, dan tablet</li>
+                <li>Batch, kedaluwarsa, dan pemilihan FEFO</li>
+                <li>Penanganan barang karantina</li>
+              </ul>
+              <a
+                class="button"
+                href="#demo"
+                data-business="pharmacy"
+                data-cta="pharmacy_demo"
+                >Diskusikan pilot apotek</a
+              >
+            </div>
+            <div class="business-example">
+              <p class="demo-label">Data demo · Apotek Sehat Sentosa</p>
+              <h4>Batch & tanggal kedaluwarsa</h4>
+              <ul class="sample-lines">
+                <li>
+                  <span>B2403A<small>ED 31/03/2026</small></span
+                  ><b>Kedaluwarsa</b>
+                </li>
+                <li>
+                  <span>B2409C<small>ED 30/09/2026</small></span
+                  ><b>Kedaluwarsa</b>
+                </li>
+              </ul>
+              <p>
+                Contoh batch dari skenario PRD. Modul pilot ini tidak
+                menggantikan kewajiban kepatuhan apotek.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section workflow-section" id="alur">
+        <div class="container">
+          <div class="section-heading centered" data-reveal>
+            <p class="eyebrow">Satu catatan, saling terhubung</p>
+            <h2>Dari transaksi pertama<br />sampai rekap hari ini.</h2>
+          </div>
+          <ol class="workflow">
+            <li data-reveal>
+              <span class="step-number">01</span>
+              <h3>Jual</h3>
+              <p>Scan Gula Pasir 1 kg ×2, catat pembayaran, cetak struk.</p>
+            </li>
+            <li data-reveal>
+              <span class="step-number">02</span>
+              <h3>Stok bergerak</h3>
+              <p>
+                Penjualan selesai mengurangi stok Gula Pasir sebanyak 2 pcs.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="step-number">03</span>
+              <h3>Kas terhitung</h3>
+              <p>Pembayaran tunai menjadi bagian perhitungan kas shift.</p>
+            </li>
+            <li data-reveal>
+              <span class="step-number">04</span>
+              <h3>Laporan siap</h3>
+              <p>Penjualan dan metode bayarnya masuk dalam rekap periode.</p>
+            </li>
+          </ol>
+          <p class="centered demo-label">
+            Contoh alur menggunakan data demo Toko Sumber Rejeki.
+          </p>
+        </div>
+      </section>
+      <section class="section tinted" id="demo-operasional">
+        <div class="container">
+          <div class="section-heading centered" data-reveal>
+            <p class="eyebrow">Coba ikuti alurnya</p>
+            <h2>Satu hari di kasir.<br />Dari buka sampai tutup shift.</h2>
+            <p>
+              Pilih langkah atau gunakan tombol berikutnya. Demo tidak berjalan
+              otomatis.
+            </p>
+          </div>
+          <div class="demo-stepper" data-reveal>
+            <div class="demo-step-tabs" aria-label="Langkah demo operasional">
+              <a href="#demo-step-1">1. Buka shift</a
+              ><a href="#demo-step-2">2. Transaksi</a
+              ><a href="#demo-step-3">3. Kas keluar</a
+              ><a href="#demo-step-4">4. Terima barang</a
+              ><a href="#demo-step-5">5. Tutup shift</a>
+            </div>
+            <div class="demo-step" id="demo-step-1">
+              <div>
+                <p class="demo-label">Data demo · Langkah 1 dari 5</p>
+                <h3>Mulai dengan kas awal yang nyata.</h3>
+                <p>
+                  Kasir Toko Sumber Rejeki membuka shift dan mencatat uang yang
+                  ada di laci sebelum menerima penjualan.
+                </p>
+              </div>
+              <dl class="demo-numbers">
+                <div>
+                  <dt>Terminal</dt>
+                  <dd>Kasir 1</dd>
+                </div>
+                <div>
+                  <dt>Kas awal</dt>
+                  <dd>Rp200.000</dd>
+                </div>
+                <div>
+                  <dt>Status shift</dt>
+                  <dd>Terbuka</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="demo-step" id="demo-step-2">
+              <div>
+                <p class="demo-label">Data demo · Langkah 2 dari 5</p>
+                <h3>Catat penjualan dan kembalian.</h3>
+                <p>
+                  Beras, minyak goreng, gula pasir ×2, dan telur 0,5 kg dibayar
+                  tunai. Angka pada contoh ini sama dengan struk demo.
+                </p>
+              </div>
+              <dl class="demo-numbers">
+                <div>
+                  <dt>Total keranjang</dt>
+                  <dd>Rp175.000</dd>
+                </div>
+                <div>
+                  <dt>Uang diterima</dt>
+                  <dd>Rp200.000</dd>
+                </div>
+                <div>
+                  <dt>Kembalian</dt>
+                  <dd>Rp25.000</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="demo-step" id="demo-step-3">
+              <div>
+                <p class="demo-label">Data demo · Langkah 3 dari 5</p>
+                <h3>Uang keluar disertai alasan.</h3>
+                <p>
+                  Kasir mencatat pembelian es batu dari laci kas. Pergerakan ini
+                  ikut dihitung saat menutup shift.
+                </p>
+              </div>
+              <dl class="demo-numbers">
+                <div>
+                  <dt>Jenis</dt>
+                  <dd>Kas keluar</dd>
+                </div>
+                <div>
+                  <dt>Nominal</dt>
+                  <dd>Rp50.000</dd>
+                </div>
+                <div>
+                  <dt>Alasan</dt>
+                  <dd>Beli es batu</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="demo-step" id="demo-step-4">
+              <div>
+                <p class="demo-label">Data demo · Langkah 4 dari 5</p>
+                <h3>Barang datang, catat penerimaannya.</h3>
+                <p>
+                  Supplier mengirim 2 dus minyak goreng. Dalam contoh ini,
+                  setiap dus berisi 12 pcs. Posting penerimaan menambah saldo
+                  persediaan.
+                </p>
+              </div>
+              <dl class="demo-numbers">
+                <div>
+                  <dt>Barang</dt>
+                  <dd>Minyak Goreng 2 L</dd>
+                </div>
+                <div>
+                  <dt>Diterima</dt>
+                  <dd>2 dus × 12 pcs</dd>
+                </div>
+                <div>
+                  <dt>Stok bertambah</dt>
+                  <dd>24 pcs</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="demo-step" id="demo-step-5">
+              <div>
+                <p class="demo-label">Data demo · Langkah 5 dari 5</p>
+                <h3>Hitung uang, lalu periksa selisihnya.</h3>
+                <p>
+                  Setelah penjualan tunai neto sehari Rp1.000.000, kas awal
+                  Rp200.000 dan kas keluar Rp50.000 menghasilkan kas seharusnya
+                  Rp1.150.000.
+                </p>
+              </div>
+              <dl class="demo-numbers">
+                <div>
+                  <dt>Kas seharusnya</dt>
+                  <dd>Rp1.150.000</dd>
+                </div>
+                <div>
+                  <dt>Kas dihitung</dt>
+                  <dd>Rp1.140.000</dd>
+                </div>
+                <div>
+                  <dt>Selisih</dt>
+                  <dd>−Rp10.000</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="step-controls" hidden>
+              <p
+                id="step-announcement"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                Langkah 1 dari 5: Buka shift
+              </p>
+              <div>
+                <button
+                  class="button secondary"
+                  id="step-previous"
+                  type="button"
+                  disabled
+                >
+                  Sebelumnya</button
+                ><button class="button" id="step-next" type="button">
+                  Berikutnya
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="perangkat">
+        <div class="container split support-split">
+          <div data-reveal="left">
+            <p class="eyebrow">Perangkat & akses</p>
+            <h2>Pakai browser.<br />Kenali batas dukungannya.</h2>
+            <p class="section-description">
+              Gunakan komputer atau tablet lanskap dengan koneksi internet.
+              Struk 58 dan 80 mm dicetak lewat dialog cetak browser. Scanner
+              menggunakan mode keyboard HID.
+            </p>
+            <a class="text-link" href="/perangkat.html"
+              >Periksa status pengujian perangkat
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg
+            ></a>
+          </div>
+          <div class="support-details" data-reveal="right">
+            <h3>Akses tim yang terarah</h3>
+            <p>
+              Akses mengikuti peran dan cabang. Perubahan harga, void, retur,
+              dan selisih kas dicatat dalam log aktivitas.
+            </p>
+            <h3>Yang belum didukung</h3>
+            <ul>
+              <li>Finalisasi pembayaran tanpa internet</li>
+              <li>QRIS/kartu yang terhubung otomatis</li>
+              <li>Split bill dan pindah meja</li>
+              <li>Transfer stok dan harga khusus per cabang</li>
+            </ul>
+            <p class="small-note">
+              Model printer, scanner, dan tablet belum dinyatakan teruji sebelum
+              verifikasi perangkat fisik.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="consultation section tinted" id="konsultasi">
+        <div class="container consultation-inner" data-reveal>
+          <img
+            src="/images/logo_utama_POS.png"
+            width="483"
+            height="465"
+            alt=""
+            loading="lazy"
+          />
+          <div>
+            <p class="eyebrow">Mulai dari kebutuhan usaha</p>
+            <h2>Alur dulu.<br />Pilihan paket menyusul.</h2>
+            <p>
+              Paket dan harga sedang disusun. Ceritakan jenis usaha, jumlah
+              cabang, dan perangkat Anda agar demo membahas kebutuhan yang
+              tepat.
+            </p>
+            <a class="button" href="#demo" data-cta="pricing_consult"
+              >Diskusikan Kebutuhan</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section" id="faq">
+        <div class="container faq-layout">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">Sebelum mulai</p>
+            <h2>Pertanyaan<br />yang sering muncul.</h2>
+            <p>Ada kebutuhan khusus?<br />Bahas bersama tim saat demo.</p>
+            <a class="text-link" href="#demo" data-cta="faq_demo"
+              >Diskusikan Kebutuhan
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg
+            ></a>
+          </div>
+          <div class="faq-list" data-reveal>
+            <details data-faq="offline">
+              <summary>Apakah bisa dipakai tanpa internet?</summary>
+              <p>
+                Keranjang offline dapat disimpan setelah sesi dan katalog
+                dimuat. Pembayaran baru dapat diselesaikan setelah terhubung
+                kembali. Login awal tanpa internet belum tersedia.
+              </p>
+            </details>
+            <details data-faq="printer">
+              <summary>Printer apa yang bisa dipakai?</summary>
+              <p>
+                Struk dicetak melalui browser ke printer 58 atau 80 mm. Model
+                perangkat fisik masih perlu diuji.
+                <a href="/perangkat.html">Lihat status pengujian perangkat</a>
+                dan bahas printer Anda saat demo.
+              </p>
+            </details>
+            <details data-faq="qris">
+              <summary>Apakah QRIS langsung terhubung?</summary>
+              <p>
+                Saat ini kasir mencatat QRIS dan kartu setelah pembayaran
+                diterima di perangkat pembayaran Anda. Laporan menandainya
+                sebagai pembayaran yang dicatat manual.
+              </p>
+            </details>
+            <details data-faq="import">
+              <summary>Bisa memindahkan produk dari Excel?</summary>
+              <p>
+                Impor katalog melalui CSV tersedia, dengan pratinjau dan
+                validasi sebelum penyimpanan. Saat demo, tim dapat membantu Anda
+                memeriksa format file yang dibutuhkan.
+              </p>
+            </details>
+            <details data-faq="branches">
+              <summary>Apakah bisa untuk banyak cabang?</summary>
+              <p>
+                Anda dapat menambah cabang dan mengatur akses pengguna per
+                cabang. Transfer stok dan harga berbeda per cabang belum
+                tersedia.
+              </p>
+            </details>
+            <details data-faq="pharmacy">
+              <summary>Bagaimana dukungan untuk apotek?</summary>
+              <p>
+                Modul apotek berada dalam program pilot untuk pencatatan batch,
+                kedaluwarsa, karantina, dan referensi resep. Kepatuhan terhadap
+                ketentuan yang berlaku tetap menjadi tanggung jawab apotek.
+              </p>
+            </details>
+            <details data-faq="profit">
+              <summary>Apakah laporan menunjukkan keuntungan?</summary>
+              <p>
+                Laporan menampilkan penjualan neto dan estimasi laba kotor
+                berdasarkan harga beli yang dicatat. Angka estimasi ditandai
+                tidak lengkap jika data harga beli belum tersedia.
+              </p>
+            </details>
+            <details data-faq="price">
+              <summary>Berapa biaya berlangganannya?</summary>
+              <p>
+                Paket dan harga belum ditetapkan. Diskusikan kebutuhan Anda agar
+                tim bisa menjelaskan pilihan ketika tersedia.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+      <section class="section demo-section" id="demo">
+        <div class="container demo-layout">
+          <div class="demo-intro" data-reveal="left">
+            <p class="eyebrow">Mari lihat bersama</p>
+            <h2>
+              Lihat StorePOS<br />dengan alur<br /><span>usaha Anda.</span>
+            </h2>
+            <p>
+              Isi formulir untuk meminta demo. Tim akan menghubungi Anda melalui
+              WhatsApp atau telepon untuk menjadwalkannya.
+            </p>
+            <div class="demo-takeaways">
+              <h3>Yang dibahas saat demo</h3>
+              <ul class="check-list">
+                <li>Alur penjualan dan kas shift</li>
+                <li>Persediaan sesuai jenis usaha</li>
+                <li>Akses tim dan perangkat Anda</li>
+              </ul>
+            </div>
+            <img
+              class="demo-brand-image"
+              src="/images/logo_header_POS.png"
+              alt="POS · Point of Sales"
+              width="679"
+              height="378"
+              loading="lazy"
+            />
+          </div>
+          <div class="form-panel" data-reveal="right">
+            <noscript
+              ><p class="form-message">
+                Aktifkan JavaScript untuk mengirim permintaan demo. Konten
+                halaman tetap bisa Anda baca.
+              </p></noscript
+            >
+            <form
+              id="demo-form"
+              action="/api/v1/leads"
+              method="post"
+              novalidate
+            >
+              <h3>Ceritakan usaha Anda</h3>
+              <p class="form-description">Field bertanda * wajib diisi.</p>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Nama lengkap *</label
+                  ><input
+                    id="name"
+                    name="name"
+                    required
+                    minlength="2"
+                    maxlength="100"
+                    autocomplete="name"
+                    placeholder="Nama Anda"
+                    aria-describedby="error-name"
+                  />
+                  <p class="field-error" id="error-name"></p>
+                </div>
+                <div class="field">
+                  <label for="phone">WhatsApp / telepon *</label
+                  ><input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    required
+                    maxlength="30"
+                    placeholder="08…"
+                    aria-describedby="phone-help error-phone"
+                  /><small id="phone-help"
+                    >Nomor Indonesia, misalnya diawali 08.</small
+                  >
+                  <p class="field-error" id="error-phone"></p>
+                </div>
+                <div class="field">
+                  <label for="business_name">Nama usaha *</label
+                  ><input
+                    id="business_name"
+                    name="business_name"
+                    required
+                    minlength="2"
+                    maxlength="120"
+                    autocomplete="organization"
+                    placeholder="Nama toko, kafe, atau apotek"
+                    aria-describedby="error-business_name"
+                  />
+                  <p class="field-error" id="error-business_name"></p>
+                </div>
+                <div class="field">
+                  <label for="business_type">Jenis usaha *</label
+                  ><select
+                    id="business_type"
+                    name="business_type"
+                    required
+                    aria-describedby="error-business_type"
+                  >
+                    <option value="">Pilih jenis usaha</option>
+                    <option value="retail">Toko / minimarket</option>
+                    <option value="restaurant">Kafe / restoran</option>
+                    <option value="pharmacy">Apotek</option>
+                    <option value="other">Lainnya</option>
+                  </select>
+                  <p class="field-error" id="error-business_type"></p>
+                </div>
+                <div class="field">
+                  <label for="city">Kota / kabupaten *</label
+                  ><input
+                    id="city"
+                    name="city"
+                    required
+                    minlength="2"
+                    maxlength="80"
+                    autocomplete="address-level2"
+                    placeholder="Lokasi usaha"
+                    aria-describedby="error-city"
+                  />
+                  <p class="field-error" id="error-city"></p>
+                </div>
+                <div class="field">
+                  <label for="email">Email <span>(opsional)</span></label
+                  ><input
+                    id="email"
+                    name="email"
+                    type="email"
+                    maxlength="254"
+                    autocomplete="email"
+                    placeholder="Alamat email Anda"
+                    aria-describedby="error-email"
+                  />
+                  <p class="field-error" id="error-email"></p>
+                </div>
+                <div class="field">
+                  <label for="branches">Jumlah cabang</label
+                  ><select id="branches" name="branches">
+                    <option value="">Pilih (opsional)</option>
+                    <option value="1">1 cabang</option>
+                    <option value="2-5">2–5 cabang</option>
+                    <option value="6+">6+ cabang</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="terminals">Jumlah kasir / terminal</label
+                  ><select id="terminals" name="terminals">
+                    <option value="">Pilih (opsional)</option>
+                    <option value="1">1 terminal</option>
+                    <option value="2-3">2–3 terminal</option>
+                    <option value="4+">4+ terminal</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="current_system">Sistem saat ini</label
+                  ><select id="current_system" name="current_system">
+                    <option value="">Pilih (opsional)</option>
+                    <option value="manual">Manual</option>
+                    <option value="spreadsheet">Spreadsheet</option>
+                    <option value="app">Aplikasi lain</option>
+                    <option value="other">Lainnya</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="contact_time">Waktu dihubungi</label
+                  ><select id="contact_time" name="contact_time">
+                    <option value="">Pilih (opsional)</option>
+                    <option value="morning">Pagi</option>
+                    <option value="afternoon">Siang</option>
+                    <option value="evening">Sore</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="notes">Kebutuhan / catatan</label
+                  ><textarea
+                    id="notes"
+                    name="notes"
+                    rows="3"
+                    maxlength="1000"
+                    placeholder="Ceritakan kebutuhan yang ingin dibahas saat demo"
+                    aria-describedby="error-notes"
+                  ></textarea>
+                  <p class="field-error" id="error-notes"></p>
+                </div>
+              </div>
+              <div class="honeypot" aria-hidden="true">
+                <label for="website">Kosongkan kolom ini</label
+                ><input
+                  id="website"
+                  name="website"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="consent-field">
+                <label class="checkbox-label" for="consent"
+                  ><input
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    required
+                    aria-describedby="error-consent"
+                  /><span
+                    >Saya setuju pengelola StorePOS menyimpan dan menggunakan
+                    data ini untuk menghubungi saya terkait permintaan demo,
+                    sesuai
+                    <a href="/privasi.html" target="_blank" rel="noopener"
+                      >Kebijakan Privasi</a
+                    >.</span
+                  ></label
+                >
+                <p class="field-error" id="error-consent"></p>
+              </div>
+              <label
+                class="checkbox-label marketing-label"
+                for="marketing_consent"
+                ><input
+                  type="checkbox"
+                  id="marketing_consent"
+                  name="marketing_consent"
+                /><span>Kirimi saya informasi produk (opsional).</span></label
+              >
+              <p id="form-message" class="form-message" role="alert" hidden></p>
+              <button
+                type="submit"
+                class="button form-submit"
+                id="submit-demo"
+                disabled
+              >
+                Kirim permintaan demo
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-arrow" />
+                </svg>
+              </button>
+              <p class="form-footnote">
+                Data dikirim hanya untuk permintaan demo dan persetujuan yang
+                Anda pilih.
+              </p>
+            </form>
+            <section
+              class="form-success"
+              id="form-success"
+              tabindex="-1"
+              role="status"
+              hidden
+            >
+              <svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>
+              <h3 id="success-title">Permintaan demo diterima.</h3>
+              <p>
+                Tim akan menghubungi Anda melalui WhatsApp atau telepon terkait
+                demo. Terima kasih sudah menceritakan usaha Anda.
+              </p>
+              <a class="text-link" href="#fitur">Kembali lihat fitur</a>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#"
+            ><img
+              src="/images/icon_web_POS.png"
+              alt=""
+              width="426"
+              height="378"
+            /><span>Store<span class="brand-accent">POS</span></span></a
+          >
+          <p>
+            Penjualan, stok, dan kas shift.<br />Catatan usaha dalam satu
+            tempat.
+          </p>
+        </div>
+        <nav aria-label="Produk">
+          <h2>Produk</h2>
+          <a href="#fitur">Fitur</a><a href="#jenis-usaha">Jenis usaha</a
+          ><a href="#alur">Alur kerja</a>
+        </nav>
+        <nav aria-label="Bantuan">
+          <h2>Bantuan</h2>
+          <a href="#faq">FAQ</a><a href="/perangkat.html">Perangkat</a
+          ><a href="#demo">Minta Demo</a>
+        </nav>
+        <nav aria-label="Informasi">
+          <h2>Informasi</h2>
+          <a href="/privasi.html">Kebijakan Privasi</a
+          ><a href="/syarat.html">Syarat Layanan</a
+          ><a href="__APP_URL__">Masuk ke aplikasi</a>
+        </nav>
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span data-year>2026</span> StorePOS</span
+        ><span>Dibuat untuk kegiatan usaha sehari-hari.</span>
+      </div>
+    </footer>
+  </body>
+</html>

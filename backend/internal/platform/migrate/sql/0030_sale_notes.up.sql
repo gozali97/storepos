@@ -1,0 +1,4 @@
+BEGIN;
+ALTER TABLE sales ADD COLUMN note TEXT NOT NULL DEFAULT '' CHECK(char_length(note)<=200);
+ALTER TABLE sale_lines ADD COLUMN note TEXT NOT NULL DEFAULT '' CHECK(char_length(note)<=200);
+COMMIT;

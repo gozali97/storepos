@@ -1,0 +1,3 @@
+BEGIN;
+ALTER TABLE variants DROP COLUMN attributes;
+COMMIT;

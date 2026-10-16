@@ -1,0 +1,3 @@
+BEGIN;
+ALTER TABLE businesses ADD COLUMN payment_methods_version INTEGER NOT NULL DEFAULT 1;
+COMMIT;

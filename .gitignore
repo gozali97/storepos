@@ -1,0 +1,22 @@
+# Build artefak
+/backend/bin/
+/app/dist/
+/app/node_modules/
+/landing/dist/
+/landing/node_modules/
+
+# Env & cache
+.env
+.env.local
+*.log
+
+# Go
+*.test
+*.out
+coverage.*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store

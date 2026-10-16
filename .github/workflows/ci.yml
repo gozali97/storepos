@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  backend:
+    name: Backend (Go)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+          cache-dependency-path: backend/go.sum
+      - name: Vet
+        run: cd backend && go vet ./...
+      - name: Test
+        run: cd backend && go test -race ./...
+
+  pricing-vectors:
+    name: Pricing vectors (Go + JS)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: cd backend && go test -v -run TestSharedVectors ./internal/pricing/
+      - run: cd app && node --test src/pricing/engine.test.js

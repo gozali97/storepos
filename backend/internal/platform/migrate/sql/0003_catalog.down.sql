@@ -1,0 +1,7 @@
+-- Rollback 0003.
+BEGIN;
+DROP TABLE IF EXISTS variant_barcodes;
+DROP TABLE IF EXISTS variants;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS categories;
+COMMIT;

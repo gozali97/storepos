@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: storepos
+      POSTGRES_PASSWORD: storepos
+      POSTGRES_DB: storepos
+    ports:
+      - "5432:5432"
+    volumes:
+      - storepos-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "storepos"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  storepos-db:

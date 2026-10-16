@@ -1,0 +1,40 @@
+:root {
+  --c-paper: #f8f9fc;
+  --c-ink: #344767;
+  --c-ink-muted: #64748b;
+  --c-rule: #e7ebf2;
+  --c-surface: #ffffff;
+  --c-accent: #2563eb;
+  --c-accent-text: #ffffff;
+  --c-accent-strong: #1d4ed8;
+  --c-accent-tint: #eff5ff;
+  --c-success: #167346;
+  --c-danger: #b42332;
+  --c-warning: #885a13;
+  --c-focus: #1d4ed8;
+  --font-sans: "Open Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --text-h1: clamp(1.45rem, 1.1rem + 1vw, 1.9rem);
+  --text-h2: 1.05rem;
+  --text-body: 0.9rem;
+  --text-small: 0.8rem;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-1: 0 8px 26px rgba(52, 71, 103, 0.07);
+  --blue-gradient: linear-gradient(135deg, #2563eb, #1e40af);
+  --touch-min: 44px;
+  --touch-primary: 48px;
+  --motion-fast: 140ms ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-fast: 0ms; }
+}

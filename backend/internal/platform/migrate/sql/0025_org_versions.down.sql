@@ -1,0 +1,4 @@
+BEGIN;
+ALTER TABLE registers DROP COLUMN version;
+ALTER TABLE branches DROP COLUMN version;
+COMMIT;

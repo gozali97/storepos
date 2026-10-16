@@ -1,0 +1,108 @@
+[
+  {
+    "name": "PRD §13.8 kafe — SC 5% termasuk dasar pajak, PPN 10% eksklusif, pembulatan Rp100",
+    "input": {
+      "lines": [
+        {
+          "id": "L1",
+          "unit_price_cents": "2500000",
+          "qty_milli": "2000",
+          "modifiers": [],
+          "line_discount": { "kind": "none", "value": 0 },
+          "tax": { "name": "PPN", "rate_bps": 1000, "mode": "exclusive" },
+          "service_charge": { "rate_bps": 500, "include_in_tax_base": true },
+          "discount_eligible": true
+        },
+        {
+          "id": "L2",
+          "unit_price_cents": "3000000",
+          "qty_milli": "1000",
+          "modifiers": [],
+          "line_discount": { "kind": "percent", "value": 1000 },
+          "tax": { "name": "PPN", "rate_bps": 1000, "mode": "exclusive" },
+          "service_charge": { "rate_bps": 500, "include_in_tax_base": true },
+          "discount_eligible": true
+        }
+      ],
+      "transaction_discount": { "kind": "amount", "value": 700000 },
+      "cash_rounding_multiple": 10000,
+      "apply_cash_rounding": true,
+      "rounding_mode": "half_up"
+    },
+    "expected": {
+      "subtotal_gross_cents": "8000000",
+      "total_line_discount_cents": "300000",
+      "transaction_discount_cents": "700000",
+      "subtotal_net_cents": "7000000",
+      "service_charge_cents": "350000",
+      "tax_cents": "735000",
+      "total_before_rounding_cents": "8085000",
+      "cash_rounding_cents": "5000",
+      "total_cents": "8090000"
+    }
+  },
+  {
+    "name": "Retail — tunai tanpa pajak, pembulatan tunai nonaktif",
+    "input": {
+      "lines": [
+        {
+          "id": "L1",
+          "unit_price_cents": "1400000",
+          "qty_milli": "375",
+          "modifiers": [],
+          "line_discount": { "kind": "none", "value": 0 },
+          "tax": null,
+          "service_charge": null,
+          "discount_eligible": false
+        }
+      ],
+      "transaction_discount": { "kind": "none", "value": 0 },
+      "cash_rounding_multiple": 0,
+      "apply_cash_rounding": false,
+      "rounding_mode": "half_up"
+    },
+    "expected": {
+      "subtotal_gross_cents": "525000",
+      "total_line_discount_cents": "0",
+      "transaction_discount_cents": "0",
+      "subtotal_net_cents": "525000",
+      "service_charge_cents": "0",
+      "tax_cents": "0",
+      "total_before_rounding_cents": "525000",
+      "cash_rounding_cents": "0",
+      "total_cents": "525000"
+    }
+  },
+  {
+    "name": "Pajak inklusif — harga Rp110.000, PPN 10% inklusif",
+    "input": {
+      "lines": [
+        {
+          "id": "L1",
+          "unit_price_cents": "11000000",
+          "qty_milli": "1000",
+          "modifiers": [],
+          "line_discount": { "kind": "none", "value": 0 },
+          "tax": { "name": "PPN", "rate_bps": 1000, "mode": "inclusive" },
+          "service_charge": null,
+          "discount_eligible": false
+        }
+      ],
+      "transaction_discount": { "kind": "none", "value": 0 },
+      "cash_rounding_multiple": 0,
+      "apply_cash_rounding": false,
+      "rounding_mode": "half_up"
+    },
+    "expected": {
+      "subtotal_gross_cents": "11000000",
+      "total_line_discount_cents": "0",
+      "transaction_discount_cents": "0",
+      "subtotal_net_cents": "11000000",
+      "service_charge_cents": "0",
+      "tax_cents": "1000000",
+      "total_before_rounding_cents": "11000000",
+      "cash_rounding_cents": "0",
+      "total_cents": "11000000"
+    }
+  }
+]

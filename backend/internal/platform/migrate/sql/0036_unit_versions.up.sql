@@ -1,0 +1,3 @@
+BEGIN;
+ALTER TABLE purchase_units ADD COLUMN version INT NOT NULL DEFAULT 1;
+COMMIT;

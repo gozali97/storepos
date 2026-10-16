@@ -1,0 +1,4 @@
+BEGIN;
+ALTER TABLE sale_lines DROP COLUMN note;
+ALTER TABLE sales DROP COLUMN note;
+COMMIT;
